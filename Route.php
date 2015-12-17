@@ -320,16 +320,15 @@ class Route{
 		$index = $_SERVER['SCRIPT_NAME'];
 		$index = substr($index,0,strrpos($index,'/')); 
 		$action = substr($uri,strlen($index)); 
+		 
 		
-		if(substr_count($action,'/')==2){
-			$action = "/Default".$action;
-		}
 		
 	 	$this->base_url = $index?$index.'/':'/'; 
 	 	/**
 	 	*	对于未使用正则的路由匹配到直接goto
 	 	*/
 		$this->_value = static::$router[$this->method][$action]; 
+		
 		$data = []; 
 		if($this->_value) goto TODO; 
 		if(!static::$router[$this->method]) goto NEXT;
@@ -375,9 +374,20 @@ class Route{
  				}
  			} 
  			$ac = $cls[1];
+ 			
+ 			if(substr_count($ac,'/')==2){
+ 				$ac = "/Default".$ac;
+ 			}
+ 			
  			$class = $this->routeClassMatch($class);
  			return $this->load_route($class,$ac,$data);
 	 	}  
+	 	
+	 	
+	 	if(substr_count($action,'/')==2){
+	 		$action = "/Default".$action;
+	 	}
+	 	
  		$action = trim(str_replace('/',' ',$action));
 	 	$a = explode(' ',$action);
 	 	$class = static::$r."\\".$a[0]."\\".$a[1];
