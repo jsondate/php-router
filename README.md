@@ -2,7 +2,7 @@ PHP5.5以上路由
 
 安装
 
-	composer require cheetaho/cheetaho-php dev-master
+	composer require sunkangchina/php-router dev-master
 	
 
 路由说明
