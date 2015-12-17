@@ -1,0 +1,24 @@
+{
+	"name": "sunkangchina/php-router",
+	"description": "Easy Router",
+	"keywords": ["php55", "router", "route", "php router"],
+	"homepage": "https://github.com/sunkangchina/php-router",
+	"type": "library",
+	"license": "public domain",
+	"authors": [
+		{
+			"name": "Sun Kang",
+			"email": "sunkang@wstaichi.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/sunkangchina/php-router/issues?state=open",
+		"source": "https://github.com/sunkangchina/php-router"
+	},
+	"require": {
+		"php": ">=5.1.0" 
+	},
+	"autoload": {
+        "psr-4": { "sunkangchina\\phprouter\\": "" }
+    },
+}
